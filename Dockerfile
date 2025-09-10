@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-LABEL maintainer="wingnut0310 <wingnut0310@gmail.com>"
+
 
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
@@ -14,10 +14,10 @@ RUN apt-get -y update && \
     rm -rf /var/lib/apt/lists*
 
 
-COPY /run_gotty.sh /run_gotty.sh
+COPY /run_gotty.sh /gotty.sh
 
-RUN chmod 744 /run_gotty.sh
+RUN chmod 744 /gotty.sh
 
 EXPOSE 8080
 
-CMD ["/bin/bash","/run_gotty.sh"]
+CMD ["/bin/bash","/gotty.sh"]
